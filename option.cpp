@@ -35,7 +35,7 @@ class CallOption{
     }
 
     ~CallOption(){
-        std::cout<<"hello from destructor"<<std::endl;
+   
         delete[] call_price;
         delete[] stock_price;
         return;
@@ -59,15 +59,11 @@ class CallOption{
         std::mt19937 gen(rd());
         std::normal_distribution <double> normal{0.0, 1.0};
 
-
-        //std::cout<<steps<<std::endl;
-        std::cout<<dt <<std::endl;
         for(int i=0;i<steps;i++){
             double t=i*dt; //current time
             double tau=maturity-t; //time remaining to maturity
 
             stock_price[i+1]=stock_price[i]*std::exp((interest_rate-0.5*volatility*volatility)*dt+(volatility*std::sqrt(dt)*normal(gen)));
-            std::cout<<stock_price[i]<<std::endl;
 
             if(tau>1e-10){
 
