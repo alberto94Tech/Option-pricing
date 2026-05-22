@@ -1,5 +1,4 @@
 # Option pricing simulator
-
 A Monte Carlo simulator for European call options written in modern C++ using object-oriented principles.
 
 ## What it does
